@@ -1,9 +1,15 @@
+import PropTypes from 'prop-types';
+
 const Header = (props) => {
   return (
     <>
       <h1>{props.course}</h1>
     </>
   );
+};
+
+Header.propTypes = {
+  course: PropTypes.string.isRequired,
 };
 
 const Part = (props) => {
@@ -16,6 +22,13 @@ const Part = (props) => {
   );
 };
 
+Part.propTypes = {
+  part: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    exercises: PropTypes.number.isRequired,
+  }).isRequired,
+};
+
 const Content = (props) => {
   return (
     <>
@@ -24,6 +37,15 @@ const Content = (props) => {
       <Part part={props.parts[2]} />
     </>
   );
+};
+
+Content.propTypes = {
+  parts: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      exercises: PropTypes.number.isRequired,
+    })
+  ).isRequired,
 };
 
 const Total = (props) => {
@@ -37,6 +59,15 @@ const Total = (props) => {
       </p>
     </>
   );
+};
+
+Total.propTypes = {
+  parts: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      exercises: PropTypes.number.isRequired,
+    })
+  ).isRequired,
 };
 
 const App = () => {
