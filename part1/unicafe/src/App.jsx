@@ -8,7 +8,7 @@ const feedbackSums = (good, neutral, bad) => {
 const feedbackAverage = (good, neutral, bad) => {
   const sum = feedbackSums(good, neutral, bad);
   if (sum === 0) {
-    return 0; // or any default value you prefer
+    return 0; 
   }
   return (good - bad) / sum;
 }
@@ -74,9 +74,10 @@ const App = () => {
       setNeutral(neutral + 1)
     } else if (value === 'bad') {
       setBad(bad + 1)
-    }     
+    }  else {
+    console.error('Unexpected : ${value}')
+    }         
   }
-
 
   return (
     <div>
