@@ -1,0 +1,15 @@
+button {
+    background-color: white;
+    border: 1px solid grey;
+    border-radius: 5px;
+    margin: 1px;
+}
+
+/* Optional: Add hover effect */
+button:hover {
+    background-color: #f0f0f0; /* Change background color on hover */
+}
+
+thead {
+    font-size: xx-large;
+}
