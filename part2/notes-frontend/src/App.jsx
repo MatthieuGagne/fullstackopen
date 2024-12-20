@@ -6,10 +6,10 @@ import Footer from './components/Footer'
 
 const App = (props) => {
 
-  const [notes, setNotes] = useState([])
-  const [newNote, setNewNote] = useState('')
+  const [notes, setNotes] = useState(null)
+  const [newNote, setNewNote] = useState(null)
   const [showAll, setShowAll] = useState(true)
-  const [errorMessage, setErrorMessage] = useState('some error happened')
+  const [errorMessage, setErrorMessage] = useState(null)
 
   useEffect(() => {
     noteService
@@ -38,7 +38,6 @@ const App = (props) => {
       })
   }
 
-
   const addNote = (event) => {
     event.preventDefault()
     const noteObject = {
@@ -50,7 +49,7 @@ const App = (props) => {
       .create(noteObject)
       .then(returnedNote => {
         setNotes(notes.concat(returnedNote))
-        setNewNote('')
+        setNewNote(null)
       })
   }
   
@@ -62,6 +61,10 @@ const App = (props) => {
   const notesToShow = showAll
     ? notes
     : notes.filter(note => note.important === true)
+
+  if (!notes) {
+    return null
+  }
 
   return (
     <div>
