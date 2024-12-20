@@ -2,7 +2,7 @@ import { useState } from 'react'
 import Title from './Title'
 import personService from '../services/persons'
 
-const AddForm = ({ persons, setPersons }) => {
+const AddForm = ({ persons, setPersons, setErrorMessage, setSuccessMessage }) => {
 
     const [newName, setNewName] = useState('')
     const [newPhoneNumber, setNewPhoneNumber] = useState('')
@@ -11,8 +11,7 @@ const AddForm = ({ persons, setPersons }) => {
       event.preventDefault();
       const personObject = {
           name: newName,
-          phoneNumber: newPhoneNumber,
-          id: String(persons.length + 1)
+          phoneNumber: newPhoneNumber
       };
 
       const existingPerson = persons.find(person => person.name === personObject.name);
@@ -25,7 +24,17 @@ const AddForm = ({ persons, setPersons }) => {
                       setPersons(persons.map(person => person.id !== existingPerson.id ? person : updatedPerson));
                       setNewName('');
                       setNewPhoneNumber('');
+                      setSuccessMessage(`${newName} phone number was updated to ${newPhoneNumber}.`)
+                      setTimeout(() => {
+                        setSuccessMessage(null)
+                      }, 5000)
                   })
+                  .catch(error => {
+                    setErrorMessage(`Problem while updating ${newName} phone number`);
+                    setTimeout(() => {
+                        setErrorMessage(null);
+                    }, 5000);
+                });                  
           }
       } else {
           personService
@@ -34,7 +43,18 @@ const AddForm = ({ persons, setPersons }) => {
                   setPersons(persons.concat(response));
                   setNewName('');
                   setNewPhoneNumber('');
-              })
+                  setSuccessMessage(`${newName} was added to the phonebook.`)
+                  setTimeout(() => {
+                    setSuccessMessage(null)
+                  }, 5000)
+                })
+                .catch(error => {
+                  setErrorMessage(`Problem while adding  ${newName} to the phonebook`);
+                  setTimeout(() => {
+                      setErrorMessage(null);
+                  }, 5000);
+              });                  
+
       }
   };
     
