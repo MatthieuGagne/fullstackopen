@@ -1,34 +1,36 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState, useEffect } from 'react'
+import SearchBar from './components/searchbar'
+import CountryList from './components/countrylist'
+import countriesService from './services/countries'
 
-function App() {
-  const [count, setCount] = useState(0)
+
+const App = () => {
+
+  const [searchString, setSearchString] = useState('') 
+  const [countries, setCountries] = useState ([])
+  const [filteredCountries, setFilteredCountries] = useState ([])
+
+  useEffect(() => {
+    countriesService
+      .getAll()
+      .then(response => {
+        setCountries(response)
+      })
+  }, [])  
+
+  useEffect(() => {
+    // Filter countries based on searchString
+    const filtered = countries.filter(country =>
+      country.name.common.toLowerCase().includes(searchString.toLowerCase())
+    );
+    setFilteredCountries(filtered);
+  }, [searchString]);
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div>
+      <SearchBar searchString={searchString} setSearchString={setSearchString} />
+      <CountryList filteredCountries={filteredCountries}/>
+    </div>
   )
 }
 
