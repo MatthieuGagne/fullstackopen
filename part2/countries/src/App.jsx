@@ -3,7 +3,6 @@ import SearchBar from './components/searchbar'
 import CountryList from './components/countrylist'
 import countriesService from './services/countries'
 
-
 const App = () => {
 
   const [searchString, setSearchString] = useState('') 
