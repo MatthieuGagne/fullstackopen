@@ -5,13 +5,13 @@ import personService from '../services/persons'
 const AddForm = ({ persons, setPersons, setErrorMessage, setSuccessMessage }) => {
 
     const [newName, setNewName] = useState('')
-    const [newPhoneNumber, setNewPhoneNumber] = useState('')
+    const [newNumber, setNewNumber] = useState('')
   
     const addPerson = (event) => {
       event.preventDefault();
       const personObject = {
           name: newName,
-          phoneNumber: newPhoneNumber
+          number: newNumber
       };
 
       const existingPerson = persons.find(person => person.name === personObject.name);
@@ -19,12 +19,12 @@ const AddForm = ({ persons, setPersons, setErrorMessage, setSuccessMessage }) =>
       if (existingPerson) {
           if (window.confirm(`${newName} is already added to phonebook, replace old number with a new one?`)) {
               personService
-                  .update(existingPerson.id, { ...existingPerson, phoneNumber: newPhoneNumber })
+                  .update(existingPerson.id, { ...existingPerson, number: newNumber })
                   .then(updatedPerson => {
                       setPersons(persons.map(person => person.id !== existingPerson.id ? person : updatedPerson));
                       setNewName('');
                       setNewPhoneNumber('');
-                      setSuccessMessage(`${newName} phone number was updated to ${newPhoneNumber}.`)
+                      setSuccessMessage(`${newName} phone number was updated to ${newNumber}.`)
                       setTimeout(() => {
                         setSuccessMessage(null)
                       }, 5000)
@@ -42,7 +42,7 @@ const AddForm = ({ persons, setPersons, setErrorMessage, setSuccessMessage }) =>
               .then(response => {
                   setPersons(persons.concat(response));
                   setNewName('');
-                  setNewPhoneNumber('');
+                  setNewNumber('');
                   setSuccessMessage(`${newName} was added to the phonebook.`)
                   setTimeout(() => {
                     setSuccessMessage(null)
@@ -65,7 +65,7 @@ const AddForm = ({ persons, setPersons, setErrorMessage, setSuccessMessage }) =>
   
     const handlePhoneNumberChange = (event) => {
       console.log(`Phone number : ${event.target.value}`)
-      setNewPhoneNumber(event.target.value)
+      setNewNumber(event.target.value)
     }
     
     return (
@@ -82,7 +82,7 @@ const AddForm = ({ persons, setPersons, setErrorMessage, setSuccessMessage }) =>
           <div>
             phone number : 
             <input 
-            value={newPhoneNumber}
+            value={newNumber}
               onChange={handlePhoneNumberChange}
             />          
           </div>

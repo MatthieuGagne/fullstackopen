@@ -27,7 +27,7 @@ const PhonebookLine = ({ phonebookLine, setPersons, persons, setErrorMessage, se
 
     return (
         <p>
-            {phonebookLine.name} {phonebookLine.phoneNumber} <button onClick={handleDelete}>delete</button>
+            {phonebookLine.name} {phonebookLine.number} <button onClick={handleDelete}>delete</button>
         </p>
     )}
 const Phonebook = ({ phonebookLines, filterString, setPersons, persons, setErrorMessage, setSuccessMessage }) => {
