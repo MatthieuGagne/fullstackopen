@@ -8,7 +8,11 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "server": "json-server -p3001 --watch db.json"
+    "server": "json-server -p3001 --watch db.json",
+    "build-all": "npm run build:be && npm run build:fe && npm run move-builds",
+    "build:be": "cd ../phonebook-be && npm run build",
+    "build:fe": "npm run build",
+    "move-builds": "mv ../phonebook-be/ ../phonebook-build"
   },
   "dependencies": {
     "axios": "^1.7.9",
