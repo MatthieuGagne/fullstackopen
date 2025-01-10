@@ -1,0 +1,36 @@
+// Missing Name
+POST http://localhost:3001/api/persons/
+Content-Type: application/json
+
+{
+    "number": "12345651646"
+}
+
+###
+// Missing Number
+POST http://localhost:3001/api/persons/
+Content-Type: application/json
+
+{
+    "name": "Test person"
+}
+
+###
+// Existing Name
+POST http://localhost:3001/api/persons/
+Content-Type: application/json
+
+{
+    "name": "Ada Lovelace",
+    "number": "12345651646"
+}
+
+###
+// Add 
+POST http://localhost:3001/api/persons/
+Content-Type: application/json
+
+{
+    "name": "Random Person",
+    "number": "12345651646"
+}
