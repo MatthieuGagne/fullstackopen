@@ -7,7 +7,7 @@ import Footer from './components/Footer'
 const App = (props) => {
 
   const [notes, setNotes] = useState(null)
-  const [newNote, setNewNote] = useState(null)
+  const [newNote, setNewNote] = useState('') 
   const [showAll, setShowAll] = useState(true)
   const [errorMessage, setErrorMessage] = useState(null)
 
@@ -49,7 +49,7 @@ const App = (props) => {
       .create(noteObject)
       .then(returnedNote => {
         setNotes(notes.concat(returnedNote))
-        setNewNote(null)
+        setNewNote('') 
       })
   }
   
