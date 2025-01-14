@@ -9,7 +9,7 @@
     "start": "node index.js",
     "build:ui": "@powershell if (Test-Path dist) { Remove-Item -Recurse -Force dist } && cd ../phonebook-fe && npm run build && @powershell Copy-Item dist -Recurse ../phonebook-be",
     "deploy": "fly deploy",
-    "deploy:full": "npm run build:ui && npm run deploy",    
+    "deploy:full": "npm run build:ui && npm run deploy",
     "logs:prod": "fly logs"
   },
   "author": "Matt Gagné",
@@ -17,6 +17,7 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.21.2",
+    "mongoose": "^8.9.5",
     "morgan": "^1.10.0",
     "nodemon": "^3.1.9"
   },
