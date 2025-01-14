@@ -1,5 +1,11 @@
 const mongoose = require('mongoose')
 
+if (process.argv.length !== 3 && process.argv.length !== 5) {
+  console.log('Expected syntax is : node mongo.js <password> : To list all persons.')
+  console.log('Expected syntax is : node mongo.js <password> <name> <number>: To add a persons.')
+  process.exit(1)
+}
+
 const password = process.argv[2]
 const newName = process.argv[3]
 const newNumber = process.argv[4]
