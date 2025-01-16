@@ -17,9 +17,11 @@ app.use(morgan(':method :url :status :res[content-length] - :response-time ms :b
 // Error handler middleware
 const errorHandler = (error, request, response, next) => {
   console.error(error.message)
+  console.error(error.name)
 
   if (error.name === 'CastError') {
-    return response.status(400).send({ error: 'malformatted id' })
+//    return response.status(400).send({ error: 'malformatted id' })
+    return response.status(400).json({ error: error.message })
   } else if (error.name === 'ValidationError') {
     return response.status(400).json({ error: error.message })
   }
@@ -91,12 +93,6 @@ app.put('/api/persons/:id', (request, response, next) => {
 
 app.post('/api/persons', (request, response, next) => {
   const body = request.body
-
-  if (!body.name) {
-    return response.status(400).json({ error: 'name missing' })
-  } else if (!body.number) {
-    return response.status(400).json({ error: 'number missing' })
-  }
 
   const person = new Person({
     name: body.name,

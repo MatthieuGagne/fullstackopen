@@ -16,12 +16,12 @@ Content-Type: application/json
 }
 
 ###
-// Existing Name
+// Name too short
 POST http://localhost:3001/api/persons/
 Content-Type: application/json
 
 {
-    "name": "Ada Lovelace",
+    "name": "Ad",
     "number": "12345651646"
 }
 
