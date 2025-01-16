@@ -1,9 +1,12 @@
 const express = require('express')
 const app = express()
+require('dotenv').config()
+const Person = require('./models/person')
 
 app.use(express.static('dist'))
 
-const requestLogger = (request, response, next) => {
+/* 
+  const requestLogger = (request, response, next) => {
   console.log('Method:', request.method)
   console.log('Path:  ', request.path)
   console.log('Body:  ', request.body)
@@ -12,64 +15,37 @@ const requestLogger = (request, response, next) => {
 }
 
 app.use(requestLogger)
+ */
 
 const morgan = require('morgan')
-// Custom token to log request body
 morgan.token('body', (req) => JSON.stringify(req.body))
-// Custom format that includes the body for POST requests
 app.use(morgan(':method :url :status :res[content-length] - :response-time ms :body'))
 
 const cors = require('cors')
 app.use(cors())
-
-let persons = [
-    { 
-        "id": 1,
-        "name": "Arto Hellas", 
-        "number": "040-123456"
-        },
-        { 
-        "id": 2,
-        "name": "Ada Lovelace", 
-        "number": "39-44-5323523"
-        },
-        { 
-        "id": 3,
-        "name": "Dan Abramov", 
-        "number": "12-43-234345"
-        },
-        { 
-        "id": 4,
-        "name": "Mary Poppendieck", 
-        "number": "39-23-6423122"
-        }
-]
 
 app.use(express.json())
 
 app.get('/', (request, response) => {
   response.send('<h1>Hello World!</h1>')
 })
-
+/*
 app.get('/info', (request, response) => {
     const date = new Date();
     response.send(`Phonebook has info for ${persons.length} people <br> ${date.toString()}`)
 })
+*/
 
 app.get('/api/persons', (request, response) => {
-  response.json(persons)
+  Person.find({}).then(persons => {
+    response.json(persons)
+  })
 })
 
 app.get('/api/persons/:id', (request, response) => {
-  const id = Number(request.params.id)
-  const person = persons.find(person => person.id === id)
-
-  if (person) {
+  Person.findById(request.params.id).then(person => {
     response.json(person)
-  } else {
-    console.log('Person not found !')
-    response.status(404).end()
-  }
+  })
 })
 
 app.delete('/api/persons/:id', (request, response) => {
