@@ -15,4 +15,12 @@ Content-Type: application/json
 {
   "important": false
 }
+###
+//Note too short
+POST http://localhost:3001/api/notes
+Content-Type: application/json
 
+{
+  "content": "res",
+  "important": false
+}
