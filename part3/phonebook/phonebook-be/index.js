@@ -41,12 +41,14 @@ app.get('/', (request, response) => {
   response.send('<h1>Hello World!</h1>')
 })
 
-/*
-app.get('/info', (request, response) => {
-    const date = new Date();
-    response.send(`Phonebook has info for ${persons.length} people <br> ${date.toString()}`)
+app.get('/info', (request, response, next) => {
+  Person.countDocuments({})
+    .then(count => {
+      const date = new Date();
+      response.send(`Phonebook has info for ${count} people <br> ${date.toString()}`)
+    })
+    .catch(error => next(error))
 })
-*/
 
 app.get('/api/persons', (request, response, next) => {
   Person.find({}).then(persons => {
