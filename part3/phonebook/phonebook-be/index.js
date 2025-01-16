@@ -29,6 +29,7 @@ app.use(express.json())
 app.get('/', (request, response) => {
   response.send('<h1>Hello World!</h1>')
 })
+
 /*
 app.get('/info', (request, response) => {
     const date = new Date();
@@ -64,25 +65,24 @@ app.post('/api/persons', (request, response) => {
     return response.status(400).json({ 
       error: 'name missing' 
     })
-  } else if (persons.find(person => person.name === body.name)) {
+/*   } else if (persons.find(person => person.name === body.name)) {
     return response.status(400).json({ 
       error: 'person already exist' 
     })
-  } else if (!body.number) {
+ */  } else if (!body.number) {
     return response.status(400).json({ 
       error: 'number missing' 
     })
   }
   
-  const person = {
-    id: generateId(),
+  const person = new Person({
     name: body.name,
     number: body.number
-  }
+  })
 
-  persons = persons.concat(person)
-
-  response.json(person)
+  person.save().then(savedPerson => {
+    response.json(savedPerson)
+  })
 
 })
 
