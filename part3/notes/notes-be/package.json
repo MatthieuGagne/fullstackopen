@@ -9,7 +9,8 @@
     "build:ui": "@powershell if (Test-Path dist) { Remove-Item -Recurse -Force dist } && cd ../notes-fe && npm run build && @powershell Copy-Item dist -Recurse ../notes-be",
     "deploy": "fly deploy",
     "deploy:full": "npm run build:ui && npm run deploy",
-    "logs:prod": "fly logs"
+    "logs:prod": "fly logs",
+    "lint": "eslint ."
   },
   "author": "Matt Gagné",
   "license": "MIT",
@@ -21,7 +22,11 @@
     "mongoose": "^8.9.5"
   },
   "devDependencies": {
+    "@eslint/js": "^9.18.0",
     "@flydotio/dockerfile": "^0.7.0",
+    "@stylistic/eslint-plugin-js": "^2.13.0",
+    "eslint": "^9.18.0",
+    "globals": "^15.14.0",
     "nodemon": "^3.1.9"
   }
 }
