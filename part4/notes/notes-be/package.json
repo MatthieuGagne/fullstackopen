@@ -3,9 +3,9 @@
   "version": "0.0.1",
   "main": "index.js",
   "scripts": {
-    "start": "NODE_ENV=production node index.js",
-    "dev": "NODE_ENV=development nodemon index.js",
-    "test": "NODE_ENV=test node --test",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js",
+    "start": "node index.js",
     "build:ui": "@powershell if (Test-Path dist) { Remove-Item -Recurse -Force dist } && cd ../notes-fe && npm run build && @powershell Copy-Item dist -Recurse ../notes-be",
     "deploy": "fly deploy",
     "deploy:full": "npm run build:ui && npm run deploy",
