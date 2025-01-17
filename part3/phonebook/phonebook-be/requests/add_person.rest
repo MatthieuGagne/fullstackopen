@@ -26,11 +26,20 @@ Content-Type: application/json
 }
 
 ###
-// Add 
+// Bad number 
 POST http://localhost:3001/api/persons/
 Content-Type: application/json
 
 {
     "name": "Random Person",
     "number": "12345651646"
+}
+###
+// Add 
+POST http://localhost:3001/api/persons/
+Content-Type: application/json
+
+{
+    "name": "Random Persono",
+    "number": "040-22334455"
 }

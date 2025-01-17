@@ -34,8 +34,9 @@ const AddForm = ({ persons, setPersons, setErrorMessage, setSuccessMessage }) =>
                 setSuccessMessage(null);
             }, 5000);
         } catch (error) {
-            console.log(error);
-            setErrorMessage(`Problem while processing ${newName}`);
+            console.log(error.response);
+            console.log(error.response.data.error);
+            setErrorMessage(`Problem while processing ${newName} :${error.response.data.error}`);
             setTimeout(() => {
                 setErrorMessage(null);
             }, 5000);
