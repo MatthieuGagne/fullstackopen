@@ -17,7 +17,7 @@ app.use(morgan(':method :url :status :res[content-length] - :response-time ms :b
 // Error handler middleware
 const errorHandler = (error, request, response, next) => {
   console.error(error)
-  
+
   if (error.name === 'CastError' || error.name === 'ValidationError') {
     return response.status(400).json({ error: error.message })
   }
@@ -66,7 +66,7 @@ app.get('/api/persons/:id', (request, response, next) => {
 
 app.delete('/api/persons/:id', (request, response, next) => {
   Person.findByIdAndDelete(request.params.id)
-    .then(result => {
+    .then(() => {
       response.status(204).end()
     })
     .catch(error => next(error))
