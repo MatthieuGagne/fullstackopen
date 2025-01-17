@@ -1,0 +1,26 @@
+//Add working correctly
+POST http://localhost:3001/api/notes
+Content-Type: application/json
+
+{
+  "content": "rest client is a handy tool",
+  "important": false
+}
+
+###
+//Missing content
+POST http://localhost:3001/api/notes
+Content-Type: application/json
+
+{
+  "important": false
+}
+###
+//Note too short
+POST http://localhost:3001/api/notes
+Content-Type: application/json
+
+{
+  "content": "res",
+  "important": false
+}
