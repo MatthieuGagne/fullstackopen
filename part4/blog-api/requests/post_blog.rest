@@ -2,8 +2,8 @@ POST http://localhost:3003/api/blogs
 Content-Type: application/json
 
 {
-    "title": "My first blog !",
+    "title": "My second blog !",
     "author": "Matt Gagne",
-    "url": "http://localhost:3003/blogs/my-first-blog",
-    "likes": 0
+    "url": "http://localhost:3003/blogs/my-second-blog",
+    "likes": 1245
 } 
