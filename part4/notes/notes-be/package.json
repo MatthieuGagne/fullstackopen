@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "node --test",
     "dev": "nodemon index.js",
     "start": "node index.js",
     "build:ui": "@powershell if (Test-Path dist) { Remove-Item -Recurse -Force dist } && cd ../notes-fe && npm run build && @powershell Copy-Item dist -Recurse ../notes-be",
