@@ -19,6 +19,9 @@ const favoriteBlog = (blogs) => {
 }
 
 const authorWithMostBlogs = (blogs) => {
+  if (!blogs || blogs.length === 0) {
+    return null
+  }
   const authorCounts = countBy(blogs, 'author')
   const maxAuthor = maxBy(Object.keys(authorCounts), (author) => authorCounts[author])
   return {
