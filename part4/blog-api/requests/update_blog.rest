@@ -1,0 +1,21 @@
+PUT http://localhost:3003/api/blogs/5a422a851b54a676234d17f7
+Content-Type: application/json
+
+{
+  "title": "Updated React patterns",
+  "author": "Michael Chan",
+  "url": "https://reactpatterns.com/",
+  "likes": 8
+}
+
+###
+# Test updating with invalid likes
+PUT http://localhost:3003/api/blogs/5a422a851b54a676234d17f7
+Content-Type: application/json
+
+{
+  "title": "React patterns",
+  "author": "Michael Chan",
+  "url": "https://reactpatterns.com/",
+  "likes": "not a number"
+}
