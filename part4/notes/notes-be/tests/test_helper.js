@@ -4,13 +4,11 @@ const User = require('../models/user')
 const initialNotes = [
   {
     content: 'HTML is easy',
-    important: false,
-    user: null // We'll set this dynamically in the tests
+    important: false
   },
   {
     content: 'Browser can execute only JavaScript',
-    important: true,
-    user: null // We'll set this dynamically in the tests
+    important: true
   }
 ]
 
@@ -22,19 +20,17 @@ const nonExistingId = async () => {
   return note._id.toString()
 }
 
-const notesInDb = async () => {
-  const notes = await Note.find({}).populate('user', { username: 1, name: 1 })
-  return notes.map(note => note.toJSON())
-}
 
 const usersInDb = async () => {
   const users = await User.find({})
-  return users.map(u => u.toJSON())
+  return users.map(user => user.toJSON())
+}
+
+const notesInDb = async () => {
+  const notes = await Note.find({})
+  return notes.map(note => note.toJSON())
 }
 
 module.exports = {
-  initialNotes,
-  nonExistingId,
-  notesInDb,
-  usersInDb,
+  initialNotes, nonExistingId, notesInDb, usersInDb
 }
