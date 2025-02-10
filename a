@@ -1,0 +1,113 @@
+[33m1083aad[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m End of 4b
+[33m2591789[m Exercises 4.11/4.12
+[33ma2b34d2[m Exercises 4.10
+[33mfc54351[m Before Exercises 4.8
+[33md3c9976[m 4.7
+[33m4b0157a[m 4.6
+[33m3ed3883[m working on 4.6
+[33m7f51f82[m 4.5
+[33m9ab9dee[m 4.4
+[33m9f287f3[m 4.3
+[33maae9f37[m Add tests to notes
+[33me5f6c27[m Exercises 4.1-4.2
+[33mafa5889[m wot ?
+[33m88019de[m Starting 4.1
+[33mb71829b[m Notes refactor
+[33me1e0739[m Start Part4
+[33mc8b184f[m Exercise 3.22
+[33mffd8b3d[m Added ESLint to Note
+[33m2e51bc8[m Exercises 3.21
+[33m7b71189[m Exercises 3.19
+[33mc7f1065[m Before Exercises 3.19
+[33m787c767[m exercise 3.18
+[33m86d25e2[m exercise 3.18
+[33m4979b01[m exercise 3.18
+[33mf0b1230[m exercise 3.17
+[33m8799777[m before exercise 3.15/3.16
+[33m64da518[m before exercise 3.15
+[33m33e4e36[m exercise 3.14
+[33ma983349[m exercise 3.13
+[33mc428a8c[m before exercices 3.13
+[33m5e52fe9[m Connect Note API to mongo
+[33m5b39c82[m Better error management for mongo.js
+[33m8a75d03[m Exercise 3.12
+[33m9b03467[m Remove pwd
+[33m5109441[m Remove pwd
+[33mab11e16[m Remove pwd
+[33m1101724[m Before 3.12
+[33m4859df3[m end of 3b
+[33mad12f54[m moving notes-be to the web
+[33md19b7bd[m change folders + add notes application
+[33m66ef882[m add readme.md
+[33mecbb250[m adding phonebook-be
+[33me237252[m making sure git is correctly setup
+[33m815f07e[m remove phonebook-be
+[33m194a570[m Added build scripts
+[33m930c383[m ??
+[33m5816dc4[m Use the same repo for BE + FE
+[33mf500d4c[m Use the phonebook BE API
+[33m006e569[m Add phonebook to the part 3 directory
+[33ma2f2846[m End of Part3a
+[33m9e9a218[m part3 : the beginning
+[33m1557af1[m Countries application (2.18.-2.20)
+[33m0139809[m aa
+[33m8491048[m Before Exercises 2.18.-2.20
+[33m540f542[m Exercises 2.16.-2.17
+[33m55ea6a5[m Exercises 2.12.-2.15
+[33m9c4a35e[m 2d before the exercises
+[33mbc3a2b5[m Exercise 2.11
+[33mdb179c2[m Before Exercise 2.11
+[33m22bdd16[m package.json correction
+[33md925b36[m 2c -jsonServer
+[33m5b0d719[m 2.10
+[33mcbc8bd0[m Commit before exercises 2.6
+[33mf1a7b11[m Add notes application
+[33m6af1e80[m testing
+[33me0f6bde[m test 2
+[33m7ddf921[m Test
+[33m445e357[m Exercices 2a
+[33m12b6e5b[m Exercises 1.14
+[33mcd0ed95[m Exercise 1.12
+[33mf9da453[m Exercices 1.11
+[33m9ff9210[m esLint cleanup
+[33m45b82dc[m 1.5 exercices
+[33m74278fd[m 1.5 exercices
+[33m7f5fe2a[m Adding esLint config
+[33mc49a776[m 1.1: Course Information, step 1
+[33m07f8dd6[m part 1 cleanup
+[33mc1b19af[m first commit part1
+[33mbc363cc[m Update 0.6 Diagram.MD
+[33m72c7c08[m Update 0.6 Diagram.MD
+[33mb76d635[m Rename 0.6 Diagram to 0.6 Diagram.MD
+[33maebdc31[m Update 0.6 Diagram
+[33m4c08623[m Update 0.6 Diagram
+[33meed1a77[m Update 0.6 Diagram
+[33mfe6fe5d[m Create 0.6 Diagram
+[33m80985ae[m Rename 0.5 diagram.MD to part0/0.5 diagram.MD
+[33ma36e3cf[m Rename 0.4 diagram.md to part0/0.4 diagram.md
+[33m6ee65aa[m Update 0.5 diagram.MD
+[33m6ef3f8e[m Update 0.5 diagram.MD
+[33m3ce19a8[m Update 0.5 diagram.MD
+[33m0db13ed[m Rename 0.5.MD to 0.5 diagram.MD
+[33m7fc8466[m Create 0.5.MD
+[33m1b67c19[m Update 0.4 diagram.md
+[33mf3bfc65[m Update 0.4 diagram.md
+[33m4496af2[m Update 0.4 diagram.md
+[33m3f7e82a[m Update 0.4 diagram.md
+[33m2e19ad3[m Update 0.4 diagram.md
+[33m0483f51[m Update 0.4 diagram.md
+[33m05437cc[m Update 0.4 diagram.md
+[33m93ed24e[m Update 0.4 diagram.md
+[33ma06ed53[m Update 0.4 diagram.md
+[33m1d3f103[m Update and rename 0.4 diagram.stl to 0.4 diagram.md
+[33mb9a4467[m Update 0.4 diagram.stl
+[33m1e1bfd0[m Update 0.4 diagram.stl
+[33m987275f[m Update 0.4 diagram.stl
+[33mcd17725[m Update 0.4 diagram.stl
+[33m2248ddf[m Update 0.4 diagram.stl
+[33mc498bcb[m Rename 0.4 diagram.md to 0.4 diagram.stl
+[33m36a6063[m Update 0.4 diagram.md
+[33m3d008c6[m Rename 0.4 diagram to 0.4 diagram.md
+[33m8b6382e[m Update 0.4 diagram
+[33m2401927[m Create 0.4 diagram
+[33mc01cbcf[m Initial commit

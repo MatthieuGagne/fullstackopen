@@ -3,8 +3,9 @@ POST http://localhost:3001/api/notes
 Content-Type: application/json
 
 {
-  "content": "rest client is a handy tool",
-  "important": false
+  "content": "another notes bites the dust",
+  "important": false,
+  "userId": "67a66e34f2538c466a4af30e"
 }
 
 ###
